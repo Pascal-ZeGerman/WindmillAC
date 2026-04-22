@@ -34,8 +34,8 @@ class BlynkService:
 
     async def async_get_pin_value(self, pin):
         _LOGGER.debug(f"Getting pin value for pin {pin}")
-        params = {'token': self.token}
-        url = self._get_request_url(f'external/api/get', params) + f"&{pin}"
+        params = {'token': self.token, 'pin': pin}
+        url = self._get_request_url(f'external/api/get', params)
         _LOGGER.debug(f"Request URL: {url}")
 
         def fetch():
